@@ -1,0 +1,1 @@
+$ mvn archetype:create -DgroupId=com.apress.j2ee -DartifactId=simple-web-app -DarchetypeArtifactId=maven-archetype-webapp
