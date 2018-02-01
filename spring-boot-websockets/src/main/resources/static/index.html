@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>스프링 부트 웹소켓 메시징</title>
+<meta charset="utf-8"></meta>
+<script type="text/javascript" src="js/jquery/jquery-2.2.4.js"></script>
+<script type="text/javascript" src="js/sockjs/1.0.3/sockjs.js"></script>
+<script type="text/javascript" src="js/stomp.js/2.3.4/stomp.js"></script>
+</head>
+<body>
+	<div>
+		<h3>메시지:</h3>
+		<ol id="messages"></ol>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var messageList = $("#messages");
+			var socket = new SockJS('/stomp');
+			var stompClient = Stomp.over(socket);
+			stompClient.connect({}, function(frame) {
+				stompClient.subscribe("/topic/message", function(data) {
+					var message = data.body;
+					messageList.append("<li>" + message + "</li>");
+				});
+			});
+		});
+	</script>
+</body>
+</html>

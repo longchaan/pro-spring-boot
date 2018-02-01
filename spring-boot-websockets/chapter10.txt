@@ -1,0 +1,13 @@
+$ mkdir spring-boot-websockets
+
+$ cd spring-boot-websockets
+
+$ spring init -d=websocket -g=com.apress.spring -a=spring-boot-websockets --package-name=com.apress.spring -name=spring-boot-websockets -x
+
+--------------------------------------------------------------------------------
+
+https://stomp.github.io
+
+https://github.com/sockjs
+
+https://github.com/jmesnil/stomp-websocket
