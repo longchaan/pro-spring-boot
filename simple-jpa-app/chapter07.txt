@@ -1,0 +1,1 @@
+$ spring init -d=data-jpa,h2 -g=com.apress.spring -a=simple-jpa-app --package-name=com.apress.spring -name=simple-jpa-app -x
