@@ -1,0 +1,50 @@
+$ mkdir spring-boot-journal-cloud
+
+$ cd spring-boot-journal-cloud
+
+$ spring init -d=web,thymeleaf,data-jpa,data-rest,actuator,h2,mysql -g=com.apress.spring -a=spring-boot-journal-cloud --package-name=com.apress.spring -name=spring-boot-journal-cloud -x
+$ spring init -b=1.3.3.RELEASE -d=web,thymeleaf,data-jpa,data-rest,actuator,h2,mysql -g=com.apress.spring -a=spring-boot-journal-cloud --package-name=com.apress.spring -name=spring-boot-journal-cloud -x
+
+PCFDev Releases: v0.15.0 for PCF 1.7.0에서는
+Spring Boot 1.3.7.RELEASE이하만 배포 가능하다. (1.3.8버전은 배포 안됨)
+
+--------------------------------------------------------------------------------
+클라우드 파운드리 CLI
+
+$ cf --version
+
+$ vagrant up --provider=virtualbox
+$ vagrant halt
+$ vagrant destroy
+
+$ cf login -a api.local.pcfdev.io --skip-ssl-validation
+$ cf login -u admin -p admin --skip-ssl-validation
+
+$ ./mvnw clean package -DskipTests=true
+
+$ cf push journal -p target/spring-boot-journal-cloud-0.0.1-SNAPSHOT.jar
+$ cf logs journal --recent
+
+http://journal.local.pcfdev.io
+
+$ curl -i -X POST -H "Content-Type:application/json" -d '{ "title":"Cloud Foundry", "summary":"Learn about Cloud Foundry and push a Spring Boot Application", "created":"2017-12-05" }' http://journal.local.pcfdev.io/rest/journal
+
+$ cf stop journal
+$ cf start journal
+$ cf restart journal
+
+$ cf marketplace
+
+$ cf create-service SERVICE PLAN SERVICE_INSTANCE [-c PARAMETERS_AS_JSON] [-t TAGS]
+$ cf create-service p-mysql 512mb mysql
+
+$ cf services
+
+$ cf bind-service APP_NAME SERVICE_INSTANCE [-c PARAMETERS_AS_JSON]
+$ cf bind-service journal mysql
+
+바인딩한 서비스를 앱에 적용하려면 restage 해야 한다. 
+$ cf restage journal
+
+$ cf help <명령어>
+
