@@ -1,0 +1,26 @@
+--------------------------------------------------------------------------------
+스프링 부트 CLI 설치 도구 (유닉스 운영체제: 리눅스, macOS, 솔라리스 등)
+--------------------------------------------------------------------------------
+$ curl -s get.sdkman.io | bash
+
+$ source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+$ sdk version
+
+$ sdk install springboot
+
+$ spring --version
+
+$ spring init -dweb,data-jpa,h2,thymeleaf --build maven myapp --force
+
+http://repo.spring.io/release/org/springframework/boot/spring-bootcli/1.3.2.RELEASE/spring-boot-cli-1.3.2.RELEASE-bin.zip
+http://repo.spring.io/snapshot/org/springframework/boot/spring-boot-cli/
+https://docs.spring.io/spring-boot/docs/current/reference/html/gettingstarted-installing-spring-boot.html#getting-started-manual-cli-installation
+
+--------------------------------------------------------------------------------
+Variables
+--------------------------------------------------------------------------------
+JAVA_HOME
+SPRING_HOME
+PATH=%SPRING_HOME%\bin
+PATH=$SPRING_HOME/bin
