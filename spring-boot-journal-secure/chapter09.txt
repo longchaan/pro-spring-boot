@@ -1,0 +1,5 @@
+$ mkdir spring-boot-journal-secure
+
+$ cd spring-boot-journal-secure
+
+$ spring init -d=web,thymeleaf,data-jpa,data-rest,mysql,security -g=com.apress.spring -a=spring-boot-journal --package-name=com.apress.spring -name=spring-boot-journal-secure -x
