@@ -1,0 +1,7 @@
+$ mkdir spring-boot-journal-oauth
+$ cd spring-boot-journal-oauth
+$ spring init -d=web,thymeleaf,data-jpa,data-rest,security -g=com.apress.spring -a=spring-boot-journal-oauth --package-name=com.apress.spring -name=spring-boot-journal-oauth -x
+
+$ curl -i localhost:8080/oauth/token -d "grant_type=password&scope=read&username=springboot&password=isawesome" -u oauth2-client-id:oauth2-client-secret
+
+$ curl -i localhost:8080/api -H "Authorization: bearer access-token"
