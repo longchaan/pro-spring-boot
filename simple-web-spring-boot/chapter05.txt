@@ -1,0 +1,5 @@
+$ mkdir simple-web-spring-boot
+
+$ cd simple-web-spring-boot
+
+$ spring init -d=web -g=com.apress.spring -a=simple-web-spring-boot --package-name=com.apress.spring -name=simple-web-spring-boot -x
