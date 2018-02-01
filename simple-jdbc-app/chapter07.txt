@@ -1,0 +1,1 @@
+$ spring init -d=jdbc,h2 -g=com.apress.spring -a=simple-jdbc-app --package-name=com.apress.spring -name=simple-jdbc-app -x
