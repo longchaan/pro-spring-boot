@@ -1,0 +1,7 @@
+$ mkdir spring-boot-web-actuator
+
+$ cd spring-boot-web-actuator
+
+$ spring init -d=web,actuator -g=com.apress.spring -a=spring-boot-web-actuator --package-name=com.apress.spring -name=spring-boot-web-actuator -x
+
+$ curl -i -X POST http://localhost:8080/shutdown -u user:31db99f1-4b47-41e3-a80c-f33c7bea3ad9
