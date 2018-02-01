@@ -1,0 +1,9 @@
+$ mkdir spring-boot-redis
+
+$ cd spring-boot-redis
+
+$ spring init -d=redis -g=com.apress.spring -a=spring-boot-redis --package-name=com.apress.spring -name=spring-boot-redis -x
+
+http://redis.io/download
+http://github.com/MicrosoftArchive/redis
+http://github.com/MicrosoftArchive/redis/releases/download/win-3.0.504/Redis-x64-3.0.504.msi
