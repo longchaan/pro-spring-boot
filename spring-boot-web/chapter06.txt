@@ -1,0 +1,1 @@
+$ curl -X POST -d '{"title":"스프링 부트 테스트", "created":"06/18/2016", "summary":"스프링 부트 단위 테스트를 생성했다"}' -H "Content-Type: application/json" http://localhost:8080/journal
