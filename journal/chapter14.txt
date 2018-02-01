@@ -1,0 +1,37 @@
+$ mkdir journal
+$ cd journal
+================================================================================
+$ mkdir spring-boot-journal
+$ cd spring-boot-journal
+$ spring init -d=web,thymeleaf,data-jpa,data-rest,h2,mysql -g=com.apress.spring -a=spring-boot-journal --package-name=com.apress.spring -name=spring-boot-journal -x
+================================================================================
+$ mkdir journal-spring-boot-app
+$ cd journal-spring-boot-app
+$ spring init -d=web,thymeleaf,data-jpa,data-rest,h2,mysql -g=com.apress.spring -a=journal-spring-boot-app --package-name=com.apress.spring -name=journal-spring-boot-app -x
+================================================================================
+$ pwd
+/journal/spring-boot-journal
+$ cd ..
+$ mkdir journal-spring-boot-starter
+$ cd journal-spring-boot-starter
+$ vi pom.xml
+================================================================================
+$ pwd
+/journal/journal-spring-boot-starter
+$ cd ..
+$ mkdir journal-spring-boot-autoconfigure
+$ cd journal-spring-boot-autoconfigure
+$ spring init -d=web,thymeleaf,data-jpa,data-rest,h2,mysql -g=com.apress.spring -a=journal-spring-boot-autoconfigure --package-name=com.apress.spring -name=journal-spring-boot-autoconfigure -x
+================================================================================
+$ pwd
+/journal
+$ cp -r spring-boot-journal/.mvn .
+$ cp spring-boot-journal/mvn* .
+================================================================================
+$ pwd
+/journal
+$ cd /
+$ mkdir calendar
+$ cd calendar
+$ spring init -g=com.apress.spring -a=spring-boot-calendar --package-name=com.apress.spring -name=spring-boot-calendar -x
+
