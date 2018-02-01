@@ -1,0 +1,9 @@
+$ mkdir spring-boot-simple
+
+$ cd spring-boot-simple
+
+$ spring init -g=com.apres.spring -a=spring-boot-simple --package=com.apress.spring -name=spring-boot-simple -x
+
+$ spring init -g=com.apres.spring -a=spring-boot-simple --package=com.apress.spring -name=spring-boot-simple -x spring-boot-simple
+
+$ ./mvnw spring-boot:run
