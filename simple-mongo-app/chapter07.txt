@@ -1,0 +1,5 @@
+$ mkdir simple-mongo-app
+
+$ cd simple-mongo-app
+
+$ spring init -d=data-mongodb -g=com.apress.spring -a=simple-mongo-app --package-name=com.apress.spring -name=simple-mongo-app -x
