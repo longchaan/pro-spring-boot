@@ -1,0 +1,5 @@
+$ mkdir spring-boot-config
+
+$ cd spring-boot-config
+
+$ spring init -g=com.apres.spring -a=spring-boot-config --package=com.apress.spring -name=spring-boot-config -x
