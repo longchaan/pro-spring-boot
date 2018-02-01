@@ -1,0 +1,13 @@
+$ mkdir spring-boot-journal
+
+$ cd spring-boot-journal
+
+$ spring init -d=web,thymeleaf,data-jpa,data-rest -g=com.apress.spring -a=spring-boot-journal --package-name=com.apress.spring -name=spring-boot-journal -x
+
+mysql> create database journal default character set utf8 default collate utf8_general_ci;
+
+mysql> use journal;
+
+mysql> CREATE USER 'springboot'@'%' IDENTIFIED BY 'springboot' PASSWORD EXPIRE NEVER;
+
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'springboot'@'%';

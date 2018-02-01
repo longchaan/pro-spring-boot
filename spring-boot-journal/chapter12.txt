@@ -1,0 +1,57 @@
+$ mkdir spring-boot-journal
+
+$ cd spring-boot-journal
+
+$ spring init -d=web,thymeleaf,data-jpa,data-rest,mysql,security,actuator,actuator-docs -g=com.apress.spring -a=spring-boot-journal --package-name=com.apress.spring -name=spring-boot-journal -x
+
+$ keytool -genkey -alias tomcat -keyalg RSA -keystore src/main/resources/keystore.jks
+
+================================================================================
+WAR 파일 배포
+--------------------------------------------------------------------------------
+pom.xml 수정
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project ...>
+    :
+    <packaging>war</packaging>
+    :
+    <dependencies>
+        :
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+--------------------------------------------------------------------------------
+메인 애플리케이션 추상 클래스 SpringBootServletInitializer를 상속하고
+ configure(SpringApplicationBuilder) 메서드를 재정의한다.
+
+import org.springframework.boot.web.support.SpringBootServletInitializer;
+:
+
+@SpringBootApplication
+public class SpringBootJournalApplication extends SpringBootServletInitializer {
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(SpringBootJournalApplication.class);
+	}
+
+--------------------------------------------------------------------------------
+WAR 파일 패키징
+
+$ ./mvnw clean package -DskipTests=true
+
+--------------------------------------------------------------------------------
+피보탈 tc 서버의 배포 모듈로 추가하기
+
+1. Servers 뷰에서 Pivotal tc Server Developer Edition v3.2를 선택한 후
+   오른쪽 마우스 버튼을 클릭하여 Add and Remove 메뉴를 클릭한다. 
+2. 왼쪽 창에서 spring-boot-journal 프로젝트를 선택 후 Add 버튼을 클릭하고 Finish 버튼을 클릭한다. 
+
+주: 왼쪽 창에서 spring-boot-journal 프로젝트를 선택하면 아래와 같은 에러 메시지가 나타난다.
+ⓧ Project facet Cloud Foundry Standalone Application version 1.0 in not supported.
+Project Explorer 뷰에서 프로젝트를 선택한 상태에서 마우스 오른쪽 버튼으로 컨텍스트 메뉴를 보이게 한 후 Properties를 선택한다.
+나타난 대화창에서 Project Facets를 선택하고 Cloud Foundry Standalone Application 항목의 체크박스를 해제한다.

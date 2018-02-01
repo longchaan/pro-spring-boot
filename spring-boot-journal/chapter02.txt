@@ -1,0 +1,5 @@
+단독형 앱은 다음 메이븐 명령어로 생성합니다.
+
+$ mvn package
+
+$ mvn -jar target/spring-boot-journal-0.0.1-SNAPSHOT.jar
